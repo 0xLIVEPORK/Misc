@@ -2,7 +2,7 @@
 #include <cmath>
 #include <cstdlib>
 
-int StandardError_Func(int &n)
+int StandardError_Func(int * valuex)
 {
   
 }
