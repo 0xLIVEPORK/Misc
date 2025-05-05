@@ -1,6 +1,9 @@
+//PRE C89 REFERENCE
+//USE OLDER C or CONVERT TO cpp FILE
+
 #include <stdio.h>
 
-int main(void)
+main()
 {
     double fahrenheit = 0;
     double celsius;
