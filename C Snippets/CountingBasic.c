@@ -21,3 +21,18 @@ main()
     ;
     printf("%ld\n", count1);
 }
+
+//LINE COUNTING
+
+#include <stdio.h>
+
+main()
+{
+    int c, n1 = 0;
+
+    while((c = getchar()) != EOF)
+        if(c == '\n')
+            ++n1;
+
+    printf("%d NUMBER", n1);
+}
