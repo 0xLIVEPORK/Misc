@@ -45,3 +45,16 @@ main() {
     printf("EOF VALUE: %d\n", EOF);
 
 }
+
+//EXERCISE
+
+main()
+{
+    int c, n1 = 0;
+
+    while((c = getchar()) != EOF)
+        if(c == '\n' || c == ' ' || c == '\t')
+            ++n1;
+
+    printf("%d NUMBER", n1);
+}
