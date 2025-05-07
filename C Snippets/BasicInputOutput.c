@@ -48,6 +48,7 @@ main() {
 
 //EXERCISE
 
+
 #include <stdio.h>
 
 #define IN  1
@@ -55,13 +56,22 @@ main() {
 
 main()
 {
-    int c, lineCount, wordCount, charCount;
+    int c, lineCount, wordCount, charCount, STATE;
+
+    c = lineCount = wordCount = charCount, STATE = 0;
 
     while((c = getchar()) != EOF)
+    {
         if(c == '\n' || c == ' ' || c == '\t')
-            ++lineCount;
-
-    printf("%d LINE NUMBER", lineCount);
+            STATE = OUT;
+            lineCount + IN;
+        
+        if(c == '\n')
+            wordCount + IN;
+        charCount + IN;
+    }
+    printf("\n%d LINE NUMBER\n%d WORD NUMBER\n%d CHAR NUMBER", lineCount, wordCount, charCount);
 }
+
 
 
