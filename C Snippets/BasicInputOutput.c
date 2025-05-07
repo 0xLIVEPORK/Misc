@@ -48,13 +48,20 @@ main() {
 
 //EXERCISE
 
+#include <stdio.h>
+
+#define IN  1
+#define OUT 0
+
 main()
 {
-    int c, n1 = 0;
+    int c, lineCount, wordCount, charCount;
 
     while((c = getchar()) != EOF)
         if(c == '\n' || c == ' ' || c == '\t')
-            ++n1;
+            ++lineCount;
 
-    printf("%d NUMBER", n1);
+    printf("%d LINE NUMBER", lineCount);
 }
+
+
