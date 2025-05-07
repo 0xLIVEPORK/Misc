@@ -57,14 +57,24 @@ main()
 {
     int c, lineCount, wordCount, charCount, STATE;
 
-    c = lineCount = wordCount = charCount, STATE = 0;
+    c = lineCount = wordCount = charCount = STATE = 0; //We're assigning a value to STATE knowing C it would output garbage value if I mess this up.
 
     while((c = getchar()) != EOF)
     {
-        if(c == '\n' || c == ' ' || c == '\t')
-            STATE = OUT;
-            ++lineCount;
-        
         if(c == '\n')
-        {
+        ++lineCount;
 
+        if(c == '\n' || c == '\t' || c == ' ')
+            STATE = OUT;
+
+        else if(STATE == OUT)
+        {
+            STATE = IN;
+            ++wordCount;
+        }
+
+        ++charCount;
+        putchar(c);
+    }
+    printf("\n%d LINE NUMBER\n%d WORD NUMBER\n%d CHAR NUMBER", lineCount, wordCount, charCount);
+}
