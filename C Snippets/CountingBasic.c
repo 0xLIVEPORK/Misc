@@ -53,22 +53,28 @@ main()
      }
  }
 
+//Write a program to copy its input to its output, 
+//replacing each tab by \t, each backspace by \b, and each backslash by 
+//\ \. This makes tabs and backspaces visible in an unambiguous way.
 
-//Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
 #include <stdio.h>
 
 main() {
-    char c, last_c = '\0';  // last_c keeps track of the previous character
-    while ((c = getchar()) != EOF) {
-        if (c == ' ') {
-            // Only print a space if the last character wasn't a space
-            if (last_c != ' ') {
-                putchar(' ');
-            }
-        } else {
-            putchar(c);
+    int character, last_char = '\0';
+
+    while((character = getchar()) != EOF)
+    {
+        if(character == '\t')
+        {
+            putchar('\\');
+            putchar('t');
+        } else if(character == '\b')
+        {
+            putchar('\\');
+            putchar('b');
         }
-        last_c = c;  // Update the last character to the current one
+        else;
+        putchar(character);
     }
 }
 
