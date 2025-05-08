@@ -48,7 +48,6 @@ main()
          if (c == '\n' || c == ' ' || c == '\t') {
              putchar('\n');  
          } else {
-             // Otherwise, print the character
              putchar(c);
          }
      }
