@@ -53,3 +53,23 @@ main()
      }
  }
 
+// /Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
+#include <stdio.h>
+
+#define IN_BLANK        1
+#define OUT_OF_BLANK    0
+
+main() {
+    char c;
+    while((c = getchar()) != EOF)
+    {
+        if(c == ' ')
+        {
+            putchar(' ');
+            
+        } else;
+        putchar(c);
+    
+    } 
+}
+
