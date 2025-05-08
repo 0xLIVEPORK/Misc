@@ -36,3 +36,22 @@ main()
 
     printf("%d NUMBER", n1);
 }
+
+//TEST
+
+ #include <stdio.h>
+
+ main() {
+     int c = 0;
+ 
+     while ((c = getchar()) != EOF) {
+         // If it's a space, tab, or newline, print a newline
+         if (c == '\n' || c == ' ' || c == '\t') {
+             putchar('\n');  // Print a newline for any separator
+         } else {
+             // Otherwise, print the character
+             putchar(c);
+         }
+     }
+ }
+
