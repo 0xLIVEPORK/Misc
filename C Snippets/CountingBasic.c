@@ -46,7 +46,7 @@ main()
  
      while ((c = getchar()) != EOF) {
          if (c == '\n' || c == ' ' || c == '\t') {
-             putchar('\n');  // Print a newline for any separator
+             putchar('\n');  
          } else {
              // Otherwise, print the character
              putchar(c);
