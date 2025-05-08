@@ -54,22 +54,21 @@ main()
  }
 
 // /Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
+//Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
 #include <stdio.h>
 
-#define IN_BLANK        1
-#define OUT_OF_BLANK    0
-
 main() {
-    char c;
-    while((c = getchar()) != EOF)
-    {
-        if(c == ' ')
-        {
-            putchar(' ');
-            
-        } else;
-        putchar(c);
-    
-    } 
+    char c, last_c = '\0';  // last_c keeps track of the previous character
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            // Only print a space if the last character wasn't a space
+            if (last_c != ' ') {
+                putchar(' ');
+            }
+        } else {
+            putchar(c);
+        }
+        last_c = c;  // Update the last character to the current one
+    }
 }
 
