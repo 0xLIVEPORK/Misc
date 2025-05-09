@@ -1,6 +1,3 @@
-//THIS TO NOTE THAT I AM USING KERNIGHAM AND RITCHIE'S THE C PROGRAMMING LANGUAGE 2ND ED. AS REFERENCE
-//WHICH IS FROM PRE - C89 STANDARDS
-
 //Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank. D
 /*#include <stdio.h>
 
@@ -63,5 +60,8 @@ main()
 
 main() 
 {
-    int countLines, countWords, countChars, STATE
+    int INPUT, countLines, countWords, countChars, STATE;
+    INPUT = countLines = countWords = countChars = STATE = 0;
+
+    while()
 }
