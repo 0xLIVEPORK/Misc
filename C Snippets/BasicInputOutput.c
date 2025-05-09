@@ -1,89 +1,30 @@
 //THIS TO NOTE THAT I AM USING KERNIGHAM AND RITCHIE'S THE C PROGRAMMING LANGUAGE 2ND ED. AS REFERENCE
 //WHICH IS FROM PRE - C89 STANDARDS
 
-#include <stdio.h>
-
-main()
-{
-    int character;
-
-    character = getchar();
-    while(character != EOF) 
-    {
-        putchar(character);
-        character = getchar();
-    }
-}
-
-//************************************
-//2ND VER
-
-#include <stdio.h>
-
-main()
-{
-    int character;
-
-    while((character = getchar()) != EOF)
-        putchar(character);
-}
-
-//************************************
-//EXERCISE
-
-#include <stdio.h>
-//Exercise 1-6. Verify that the expression getchar ( ) I= EOF is 0 or 1. 
-//Exercise 1-7. Write a program to print the value of EOF. 
+//Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank. D
+/*#include <stdio.h>
 
 main() {
-    int c;
+    int character, last_char = '\0';
 
-    while((c = getchar()) != EOF) 
-        putchar(c);
-    
-    printf("EXPRESSION VALUE: %d\n", c = getchar() != EOF);
-    printf("EOF VALUE: %d\n", EOF);
-
-}
-
-//EXERCISE
-
-#include <stdio.h>
-
-#define IN  1
-#define OUT 0
-
-main()
-{
-    int c, lineCount, wordCount, charCount, STATE;
-
-    c = lineCount = wordCount = charCount = STATE = 0; //We're assigning a value to STATE knowing C it would output garbage value if I mess this up.
-
-    while((c = getchar()) != EOF)
+    character = 0;
+    while((character = getchar()) != EOF)
     {
-        if(c == '\n')
-        ++lineCount;
-
-        if(c == '\n' || c == '\t' || c == ' ')
-            STATE = OUT;
-
-        else if(STATE == OUT)
-        {
-            STATE = IN;
-            ++wordCount;
+        if(character == ' ')
+        {if(last_char != ' '){
+            putchar(' ');
+           }
+        } else{
+            putchar(character);
         }
-
-        ++charCount;
-        putchar(c);
+        last_char = character;
     }
-    printf("\n%d LINE NUMBER\n%d WORD NUMBER\n%d CHAR NUMBER", lineCount, wordCount, charCount);
-}
 
-
-////Exercise 1-10. Write a program to copy its input to its output, replacing each tab by \t, each backspace by \b, 
+}*/
+//Exercise 1-10. Write a program to copy its input to its output, replacing each tab by \t, each backspace by \b, 
 //and each backslash by \ \. This makes tabs and backspaces visible in an unambiguous way. 
 #include <stdio.h>
-
+/*
 main() 
 {
     int character;
@@ -109,5 +50,18 @@ main()
                 }
             }
         }
-    }e
-    
+    }
+    Word Counting The fourth in our series of useful programs counts lines, words, and charac- ters, with the loose definition
+     that a word is any sequence of characters that does not contain a blank, tab or newline. This is a bare-bones version 
+     of the UNIX program wC
+    */
+
+#include <stdio.h>
+
+#define IN_WORD     1 
+#define OUT_WORD    0   
+
+main() 
+{
+    int countLines, countWords, countChars, STATE
+}
