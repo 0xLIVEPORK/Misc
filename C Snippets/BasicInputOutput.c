@@ -60,8 +60,27 @@ main()
 
 main() 
 {
-    int INPUT, countLines, countWords, countChars, STATE;
-    INPUT = countLines = countWords = countChars = STATE = 0;
+    int INPUT, lineCount, wordCount, charCount, STATE;
+    INPUT = lineCount = wordCount = charCount = STATE = 0;
 
-    while()
+    while((INPUT = getchar()) != EOF)
+    {
+        ++charCount;
+        if(INPUT == '\n')
+        {
+            ++lineCount;
+        } else {
+            if(INPUT != ' ') 
+            {
+                STATE = IN_WORD;
+                if(STATE == IN_WORD)
+                {
+                    ++wordCount;
+                    STATE = OUT_WORD;
+                }
+            }
+        }
+    }
+
+    printf("%d  %d  %d", lineCount, wordCount, charCount);
 }
