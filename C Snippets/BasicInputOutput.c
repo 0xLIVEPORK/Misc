@@ -70,17 +70,18 @@ main()
         {
             ++lineCount;
         } else {
-            if(INPUT != ' ') 
+            if(INPUT == ' '|| INPUT == '\n' || INPUT == '\t') 
             {
-                STATE = IN_WORD;
-                if(STATE == IN_WORD)
+                STATE = OUT_WORD;
+                putchar('T');
+            } else{
+                if(STATE == OUT_WORD)
                 {
-                    ++wordCount;
-                    STATE = OUT_WORD;
+                    
                 }
             }
         }
     }
-
+    putchar(INPUT);
     printf("%d  %d  %d", lineCount, wordCount, charCount);
 }
