@@ -52,7 +52,7 @@ main()
      that a word is any sequence of characters that does not contain a blank, tab or newline. This is a bare-bones version 
      of the UNIX program wC
     */
-
+/*
 #include <stdio.h>
 
 #define IN_WORD     1 
@@ -61,7 +61,7 @@ main()
 main() 
 {
     int INPUT, lineCount, wordCount, charCount, STATE;
-    INPUT = lineCount = wordCount = charCount = 0;
+    INPUT, lineCount = wordCount = charCount = 0;
 
     STATE = OUT_WORD;
 
@@ -84,4 +84,30 @@ main()
     }
     putchar(INPUT);
     printf("%d  %d  %d", lineCount, wordCount, charCount);
+}*/
+
+
+#include <stdio.h>
+
+#define     IN_WORD     1
+#define     OUT_WORD    0
+
+main()
+{
+
+    int character, STATE = 0;
+
+    while((character = getchar() )!= EOF)
+        {
+            if(character == ' ' || character == '\t' || character == '\n') //We add a '\n' comparison so that we can notice the outputs from the inputs.
+            {
+                STATE = OUT_WORD; 
+            } else if(STATE == OUT_WORD)
+                {
+                    STATE = IN_WORD;
+                    putchar('\n');
+                }
+
+        putchar(character);
+        }
 }
