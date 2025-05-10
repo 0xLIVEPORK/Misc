@@ -105,7 +105,7 @@ main()
                 {
                     STATE = IN_WORD;
                     putchar('\n');
-                }
+                }f
 
         putchar(character);
         }
