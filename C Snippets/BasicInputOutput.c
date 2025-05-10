@@ -61,7 +61,7 @@ main()
 main() 
 {
     int INPUT, lineCount, wordCount, charCount, STATE;
-    INPU lineCount = wordCount = charCount = 0;
+    INPUT = lineCount = wordCount = charCount = 0;
 
     STATE = OUT_WORD;
 
