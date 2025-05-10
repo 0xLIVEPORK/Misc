@@ -61,26 +61,26 @@ main()
 main() 
 {
     int INPUT, lineCount, wordCount, charCount, STATE;
-    INPUT = lineCount = wordCount = charCount = STATE = 0;
+    INPUT, lineCount = wordCount = charCount = 0;
+
+    STATE = OUT_WORD;
 
     while((INPUT = getchar()) != EOF)
     {
         ++charCount;
         if(INPUT == '\n')
-        {
             ++lineCount;
-        } else {
-            if(INPUT == ' '|| INPUT == '\n' || INPUT == '\t') 
+        
+        if(INPUT == ' ' || INPUT == '\n' || INPUT == '\t')
+            STATE = OUT_WORD;
+
+        else if(STATE == OUT_WORD)
             {
-                STATE = OUT_WORD;
-                putchar('T');
-            } else{
-                if(STATE == OUT_WORD)
-                {
-                    
-                }
+                STATE = IN_WORD;
+                ++wordCount;
             }
-        }
+
+        
     }
     putchar(INPUT);
     printf("%d  %d  %d", lineCount, wordCount, charCount);
