@@ -61,12 +61,15 @@ main()
         MAX = (MAX > countDigit[i] ? MAX : countDigit[i]);
     
     //GET HIGHEST NUM;
-    
 
+    printf()
+
+    //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
     for(int i = 0; i < MAX; i++)
     {
-        printf("__\n");
+        printf("WHITE SPACE: %c       ELSE: %c     MAX: _\n", 
+              (i < wtspaceCount) ? ' ' : '_', 
+              (i < elseCount) ? ' ' : '_');
     }
      
-    printf("")
 }
