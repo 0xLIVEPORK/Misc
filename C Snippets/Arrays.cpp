@@ -18,8 +18,15 @@ main()
         {
         if(inputVAR == ' ' || inputVAR == '\t' || inputVAR == '\n')
             ++wtspaceCount;
-        else if()
+        else if(inputVAR >= '0' && inputVAR <= '9')
+            ++countDigit[inputVAR];
+        else
+            ++elseCount;
         }
 
-    
+    printf("WHITE SPACE COUNT: %d\n"
+           "ELSE COUNT: %d\n", wtspaceCount, elseCount);
+           
+    for(int i = 0; i < (sizeof(countDigit) / countDigit[0]); i++)
+        printf("DIGIT [%d]: %d", i, countDigit[i]);
 }
