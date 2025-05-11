@@ -31,11 +31,14 @@ main()
         printf("DIGIT [%d]: %d\n", i, countDigit[i]);
 }*/
 
+//we're now making a historgam version instead the textbook told me to it horizontally but THAT'S TOO EASY
 #include <stdio.h>
 
 main()
 {
     int inputVAR, wtspaceCount, elseCount;
+    inputVAR = wtspaceCount = elseCount = 0;
+
     int countDigit[10];
 
     for(int i = 0; i < 10; i++)
@@ -51,5 +54,9 @@ main()
         else
             ++elseCount;
 
-    for(i)
+    //GET HIGHEST NUM;
+    int MAX = (wtspaceCount > elseCount) ? wtspaceCount : elseCount;
+    for(int i = 0; i < 9; i++)
+        int HIGHEST = wtspaceCount > elseCount;
+        
 }
