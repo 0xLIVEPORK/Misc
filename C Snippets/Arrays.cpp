@@ -62,14 +62,14 @@ main()
     
     //GET HIGHEST NUM;
 
-    printf()
+    printf("%d \n", elseCount);
 
     //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
     for(int i = 0; i < MAX; i++)
     {
         printf("WHITE SPACE: %c       ELSE: %c     MAX: _\n", 
               (i < wtspaceCount) ? ' ' : '_', 
-              (i < elseCount) ? ' ' : '_');
+              (i < elseCount) ? '_' : ' ');
     }
      
 }
