@@ -14,7 +14,7 @@ main()
     for(int i = 0; i < 10; i++)
     {
     countDigit[i] = 0;
-    printf("Count: %d", countDigit[i]);
+    printf("Count: %d", countDigit[i]); //TEST CASE
     }
 
     
