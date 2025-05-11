@@ -12,10 +12,14 @@ main()
     inputVAR = wtspaceCount = elseCount = 0;
     
     for(int i = 0; i < 10; i++)
-    {
-    countDigit[i] = 0;
-    printf("Count: %d", countDigit[i]); //TEST CASE
-    }
+        countDigit[i] = 0;
+
+    while((inputVAR = getchar()) != EOF)
+        {
+        if(inputVAR == ' ' || inputVAR == '\t' || inputVAR == '\n')
+            ++wtspaceCount;
+        else if()
+        }
 
     
 }
