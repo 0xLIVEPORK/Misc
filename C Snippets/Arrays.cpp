@@ -56,13 +56,17 @@ main()
 
     //GET HIGHEST NUM;
     int MAX = (wtspaceCount > elseCount) ? wtspaceCount : elseCount;
+
     for(int i = 0; i < 10; i++)
         MAX = (MAX > countDigit[i] ? MAX : countDigit[i]);
     
-    printf("\nWHITE SPACE: %d"
-           "\nELSE COUNT:  %d",
-           wtspaceCount, elseCount);
+    //GET HIGHEST NUM;
+    
 
-    printf("\n%d", MAX);
-        
+    for(int i = 0; i < MAX; i++)
+    {
+        printf("__\n");
+    }
+     
+    printf("")
 }
