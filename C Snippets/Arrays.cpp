@@ -46,13 +46,16 @@ main()
 
     while((inputVAR = getchar()) != EOF)
         if(inputVAR >= '0' && inputVAR <= '9')
+            {
             ++countDigit[inputVAR - '0'];
-
-        else if(inputVAR == ' ' || inputVAR == '\n' || inputVAR == '\t')
-            ++wtspaceCount;
-
-        else
-            ++elseCount;
+            }
+            else if(inputVAR == ' ' || inputVAR == '\n' || inputVAR == '\t')
+                {
+                ++wtspaceCount;
+                } else
+                    { 
+                    ++elseCount;
+                    }
 
     //GET HIGHEST NUM;
     int MAX = (wtspaceCount > elseCount) ? wtspaceCount : elseCount;
@@ -62,14 +65,13 @@ main()
     
     //GET HIGHEST NUM;
 
-    printf("%d \n", elseCount);
+    printf("%d \n", elseCount); //TESTING CAUSE I'M SEEING ODD BEHAVIOR FROM ELSE PRINTER HISTOGRAM
 
     //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
     for(int i = 0; i < MAX; i++)
     {
         printf("WHITE SPACE: %c       ELSE: %c     MAX: _\n", 
-              (i < wtspaceCount) ? ' ' : '_', 
-              (i < elseCount) ? '_' : ' ');
+              
     }
      
 }
