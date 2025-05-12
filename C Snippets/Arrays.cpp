@@ -70,7 +70,11 @@ main()
     //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
     for(int i = 0; i < MAX; i++)
     {
-        printf("WHITE SPACE: %c       ELSE: %c     MAX: _\n", 
+        printf("WHITE SPACE: %s       ELSE:      MAX: _\n", 
+               (wtspaceCount != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚",
+                elseCount != MAX) ? ((i < elseCount) ? " " : "❚") : "❚",
+                countDigit[0] != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚"
+                countDigit[1] != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚");
               
     }
      
