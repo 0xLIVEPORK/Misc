@@ -68,13 +68,23 @@ main()
     printf("%d \n", elseCount); //TESTING CAUSE I'M SEEING ODD BEHAVIOR FROM ELSE PRINTER HISTOGRAM
 
     //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
+    printf("WHITE SPACE: %s       ELSE:      MAX: _\n", 
     for(int i = 0; i < MAX; i++)
     {
         printf("WHITE SPACE: %s       ELSE:      MAX: _\n", 
                (wtspaceCount != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚",
-                elseCount != MAX) ? ((i < elseCount) ? " " : "❚") : "❚",
-                countDigit[0] != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚"
-                countDigit[1] != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚");
+               (elseCount != MAX) ? ((i < elseCount) ? " " : "❚") : "❚",
+               (countDigit[0] != MAX) ? ((i < countDigit[0]) ? " " : "❚") : "❚",
+               (countDigit[1] != MAX) ? ((i < countDigit[1]) ? " " : "❚") : "❚",
+               (countDigit[2] != MAX) ? ((i < countDigit[2]) ? " " : "❚") : "❚",
+               (countDigit[3] != MAX) ? ((i < countDigit[3]) ? " " : "❚") : "❚",
+               (countDigit[4] != MAX) ? ((i < countDigit[4]) ? " " : "❚") : "❚",
+               (countDigit[5] != MAX) ? ((i < countDigit[5]) ? " " : "❚") : "❚",
+               (countDigit[6] != MAX) ? ((i < countDigit[6]) ? " " : "❚") : "❚",
+               (countDigit[7] != MAX) ? ((i < countDigit[7]) ? " " : "❚") : "❚",
+               (countDigit[8] != MAX) ? ((i < countDigit[8]) ? " " : "❚") : "❚",
+               (countDigit[9] != MAX) ? ((i < countDigit[9]) ? " " : "❚") : "❚")
+               ;
               
     }
      
