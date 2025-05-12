@@ -31,7 +31,7 @@ main()
         printf("DIGIT [%d]: %d\n", i, countDigit[i]);
 }*/
 
-//we're now making a historgam version instead the textbook told me to it horizontally but THAT'S TOO EASY
+//we're now making a histogram version instead the textbook told me to it horizontally but THAT'S TOO EASY
 #include <stdio.h>
 
 main()
@@ -65,27 +65,25 @@ main()
     
     //GET HIGHEST NUM;
 
-    printf("%d \n", elseCount); //TESTING CAUSE I'M SEEING ODD BEHAVIOR FROM ELSE PRINTER HISTOGRAM
 
     //THIS SHIT SO UNREADABLE GANG BUT WHO ELSE NEEDS TO READS THIS?
-    printf("WHITE SPACE: %s       ELSE:      MAX: _\n", 
+    printf("[WHITE SPACE]  [ELSE:]  [0] [1] [2] [3] [4] [5] [6] [7] [8] [9]");
     for(int i = 0; i < MAX; i++)
     {
-        printf("WHITE SPACE: %s       ELSE:      MAX: _\n", 
-               (wtspaceCount != MAX) ? ((i < wtspaceCount) ? " " : "❚") : "❚",
-               (elseCount != MAX) ? ((i < elseCount) ? " " : "❚") : "❚",
-               (countDigit[0] != MAX) ? ((i < countDigit[0]) ? " " : "❚") : "❚",
-               (countDigit[1] != MAX) ? ((i < countDigit[1]) ? " " : "❚") : "❚",
-               (countDigit[2] != MAX) ? ((i < countDigit[2]) ? " " : "❚") : "❚",
-               (countDigit[3] != MAX) ? ((i < countDigit[3]) ? " " : "❚") : "❚",
-               (countDigit[4] != MAX) ? ((i < countDigit[4]) ? " " : "❚") : "❚",
-               (countDigit[5] != MAX) ? ((i < countDigit[5]) ? " " : "❚") : "❚",
-               (countDigit[6] != MAX) ? ((i < countDigit[6]) ? " " : "❚") : "❚",
-               (countDigit[7] != MAX) ? ((i < countDigit[7]) ? " " : "❚") : "❚",
-               (countDigit[8] != MAX) ? ((i < countDigit[8]) ? " " : "❚") : "❚",
-               (countDigit[9] != MAX) ? ((i < countDigit[9]) ? " " : "❚") : "❚")
-               ;
-              
+        printf("\n      %s           %s      %s   %s   %s   %s   %s   %s   %s   %s   %s   %s",
+            (i >= MAX - wtspaceCount) ? "❚" : " ",
+            (i >= MAX - elseCount) ? "❚" : " ",
+            (i >= MAX - countDigit[0]) ? "❚" : " ",
+            (i >= MAX - countDigit[1]) ? "❚" : " ",
+            (i >= MAX - countDigit[2]) ? "❚" : " ",
+            (i >= MAX - countDigit[3]) ? "❚" : " ",
+            (i >= MAX - countDigit[4]) ? "❚" : " ",
+            (i >= MAX - countDigit[5]) ? "❚" : " ",
+            (i >= MAX - countDigit[6]) ? "❚" : " ",
+            (i >= MAX - countDigit[7]) ? "❚" : " ",
+            (i >= MAX - countDigit[8]) ? "❚" : " ",
+            (i >= MAX - countDigit[9]) ? "❚" : " ");
+     
     }
      
 }
