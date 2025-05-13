@@ -23,4 +23,10 @@ int power();
 
 main()
 
-power
+power(base, n)
+int base, n;
+
+{
+
+    //TS
+}
