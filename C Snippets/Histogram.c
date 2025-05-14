@@ -24,7 +24,7 @@ int base, n;
 //gcc -std=c89 [file] -o [filename]
 #include <stdio.h>
 
-int hstDisplay();
+void hstDisplay();
 
 main()
 {
