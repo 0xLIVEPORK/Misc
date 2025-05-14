@@ -24,16 +24,16 @@ int base, n;
 //gcc -std=c89 [file] -o [filename]
 #include <stdio.h>
 
-void hstDisplay();
+int hstDisplay();
 
 main()
 {
-
+    printf("TEST: "); hstDisplay(10);
 }
 
 hstDisplay(stkheight)
 int stkheight;
     {
         for(; stkheight >= 0 ; --stkheight)
-            printf("")
+            printf('|');
     }
