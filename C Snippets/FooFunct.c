@@ -1,32 +1,16 @@
-//K&R pre C89
-
 #include <stdio.h>
 
-int Exponent(int base, int exponent)
-    {
-        int x = base;
-        for(exponent; exponent >= 0; exponent--)
-            base = base * x;
-            printf("%d", base); //testing
-            
-
-        return base;
-    }
-
-main() {
-    printf("TEST: %d\n", Exponent(2, 4));
-}
-    
-#include <stdio.h>
-
-int power();
+int testfuct();
 
 main()
-
-power(base, n)
-int base, n;
-
 {
+    printf("Test GCC -std=c89: %d", testfuct(10, 10));
+}
 
-    //TS
+testfuct(base, n)
+int base, n;
+{
+    int cock = base * n;
+
+    return cock;
 }
