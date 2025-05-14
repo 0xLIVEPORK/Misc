@@ -1,3 +1,6 @@
+//gcc -std=c89 fahr.c -o fahr
+//don't bother doing -Wall or  -Pedantic that shit will stop you like a gatekeeper of terrible code.
+
 #include <stdio.h>
 
 int testfuct();
