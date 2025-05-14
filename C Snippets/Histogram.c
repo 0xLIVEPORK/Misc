@@ -19,21 +19,31 @@ int base, n;
 */
 
 
-//HISTOGRAM
-//K&R C - REMEMBER THESE COMPILER FLAGS
-//gcc -std=c89 [file] -o [filename]
+/*HISTOGRAM
+K&R C - REMEMBER THESE COMPILER FLAGS
+gcc -std=c89 [file] -o [filename]*/
 #include <stdio.h>
 
 int hstDisplay();
+int WC();
 
 main()
 {
-    printf("TEST: "); hstDisplay(10);
+    
 }
 
 hstDisplay(stkheight)
 int stkheight;
     {
-        for(; stkheight >= 0 ; --stkheight)
-            printf('|');
+        for(; stkheight > 0 ; --stkheight)
+            printf("|");
+    }
+
+WC(character)
+int character;
+    {
+        while((character = getchar()) != EOF)
+            {
+                
+            }
     }
