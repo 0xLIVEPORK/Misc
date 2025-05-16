@@ -51,8 +51,8 @@ class App{
 
     public:
 
-        To_Do() = delete; 
-        To_Do(std::string name) : user(name) {}
+        App() = delete; 
+        App(std::string name) : user(name) {}
 
         void set_USERNAME() {
             std::string confirm_name;
@@ -67,19 +67,21 @@ class App{
                     std::cout << "\nCONFIRM [Y] or [N]? ";
                     do
                     {
-                        if(!(std::cin >> confirm_name) || confirm_name != "N" || confirm_name != "Y")
+                        if(!(std::cin >> confirm_name))
                         {
+                            if(confirm_name !)
                             std::cin.clear();
                             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             continue;
                         } break;
 
-                        if(confirm_name == "N")
-                            break;
-                        else
-                            user = new_name;
-
                     } while(true);
+
+                    if(confirm_name == "N")
+                        break;
+                    else
+                        user = new_name;
+                        break;
                     
                 }
         }
@@ -88,7 +90,8 @@ class App{
 
 int main()
 {
-    T
+    App Todo("Cock");
+    Todo.set_USERNAME();
 
     return 0;
 }
