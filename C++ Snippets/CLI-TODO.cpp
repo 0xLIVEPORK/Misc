@@ -55,15 +55,19 @@ class To_Do{
         To_Do(std::string name) : user(name) {}
 
         void set_USERNAME() {
+            std::string confirm_name;
 
-            while(true)
+            while(confirm_name != "Y")
                 {
-                    std::cout << "Enter Your [NEW NAME]: ";
-                    std::cin >> user; 
+                    std::string new_name;
 
-                    std::string confirm_name;
+                    std::cout << "Enter Your [NEW NAME]: ";
+                    std::cin >> new_name; 
+
                     std::cout << "\nCONFIRM [Y] or [N]? ";
                     std::cin >> confirm_name;
+
+                    user = (confirm_name == "Y") ? new_name : nullptr;
                     
                         
                 }
