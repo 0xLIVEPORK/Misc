@@ -59,9 +59,11 @@ class To_Do{
             while(true)
                 {
                     std::cout << "Enter Your [NEW NAME]: ";
-                    std::cin >> user;
+                    std::cin >> user; 
 
-                    std::cout << ""
+                    std::string confirm_name;
+                    std::cout << "\nCONFIRM [Y] or [N]? ";
+                    std::cin >> confirm_name;
                     
                         
                 }
