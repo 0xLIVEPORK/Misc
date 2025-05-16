@@ -58,7 +58,12 @@ class To_Do{
 
             while(true)
                 {
-                    if(!(std::cin >> user) ||)
+                    std::cout << "Enter Your [NEW NAME]: ";
+                    std::cin >> user;
+
+                    std::cout << ""
+                    
+                        
                 }
         }
 };
@@ -70,4 +75,3 @@ int main()
 
     return 0;
 }
-  
