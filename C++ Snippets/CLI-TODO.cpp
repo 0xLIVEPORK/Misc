@@ -67,13 +67,14 @@ class To_Do{
                     std::cout << "\nCONFIRM [Y] or [N]? ";
                     do
                     {
-                        if(!(std::cin >> confirm_name))
+                        if(!(std::cin >> confirm_name) || confirm_name != "N" || confirm_name != "Y")
                         {
-                        if(confirm_name == "N" || confirm_name == "n")
-                            {
-                                ""
-                            }
+                            std::cin.clear();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            continue;
                         }
+
+
 
                     } while(true);
                     
