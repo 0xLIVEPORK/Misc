@@ -67,7 +67,18 @@ class To_Do{
                     std::cout << "\nCONFIRM [Y] or [N]? ";
                     std::cin >> confirm_name;
 
-                    user = (confirm_name == "Y") ? new_name : nullptr;
+                    if(confirm_name == "Y")
+                        user = new_name;
+
+                    else if(confirm_name == "N" || confirm_name == "n")
+                        {
+                            new_name.clear();
+                            std::cout << "Ok.";
+                        }   else
+                                break;
+
+                    
+                        
                     
                         
                 }
