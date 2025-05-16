@@ -45,7 +45,7 @@ Let’s deliver:
 #include <fstream>
 
 
-class To_Do{
+class App{
     private:
         std::string user;
 
@@ -72,9 +72,12 @@ class To_Do{
                             std::cin.clear();
                             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             continue;
-                        }
+                        } break;
 
-
+                        if(confirm_name == "N")
+                            break;
+                        else
+                            user = new_name;
 
                     } while(true);
                     
@@ -85,7 +88,7 @@ class To_Do{
 
 int main()
 {
-    std::string test;
+    T
 
     return 0;
 }
