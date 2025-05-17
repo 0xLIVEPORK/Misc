@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -13,6 +14,17 @@ class App{
         App() = delete; 
         App(std::string name) : user(name) {}
 
+
+        void Menu_Loop() {
+
+            std::cout << "\t[TO DO]\t\n"
+                         "#  CHOOSE THE NUMBER\n\n"
+                         "[1] OPEN TO DO LIST\n"
+                         "[2] EDIT LIST\n"
+                         "[3] USER SETTINGS\n"
+                         "[4] LOG-OUT";
+        }
+
         void set_USERNAME() {
             std::string new_name;
             std::string confirm_name;
@@ -27,15 +39,15 @@ class App{
         
                     if (confirm_name == "Y") {
                         user = new_name;
-                        return;  // Exit the function directly, no break dance
+                        return;  
                     }
                     else if (confirm_name == "N") {
                         std::cout << "Let's try again.\n";
-                        break;  // Break inner loop to ask for name again
+                        break; 
                     }
                     else {
                         std::cerr << "Invalid input. Please enter Y or N.\n";
-                        // Clear bad input (if any)
+
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     }
@@ -55,9 +67,8 @@ class App{
 int main()
 {
     App Todo("Cock");
-    Todo.set_USERNAME();
 
-    std::cout << Todo.getUser();
+    Todo.Menu_Loop();
 
     return 0;
 }
