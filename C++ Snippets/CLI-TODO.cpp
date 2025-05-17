@@ -1,7 +1,3 @@
-/*
-Hallelujah, message received loud and clear: **you want a small C++-only project**, not a C bootcamp. No C. Just a quick, clean, punchy C++ project to keep your skills sharp.
-
-Let’s deliver:
 
 ---
 
