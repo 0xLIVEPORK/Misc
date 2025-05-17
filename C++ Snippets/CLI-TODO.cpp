@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -16,51 +14,35 @@ class App{
         App(std::string name) : user(name) {}
 
         void set_USERNAME() {
+            std::string new_name;
             std::string confirm_name;
-
-            while(confirm_name != "Y")
-                {
-                    std::string new_name;
-
-                    std::cout << "Enter Your [NEW NAME]: ";
-                    std::cin >> new_name; 
-
-                    std::cout << "\nCONFIRM [Y] or [N]? ";
-
-                    /*
-                    INPUT VALIDATION
-                    */
-                    do
-                    {
-                        if(!(std::cin >> confirm_name))
-                        {   
-                            while(true)
-                            {
-                            if(confirm_name != "Y" && confirm_name != "N")
-
-                                std::cin.clear();
-                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-                                std::cerr << "Invalid";
-
-                                continue;
-                            } 
-                        } break;
-
-                    } while(true);
-
-                    /*
-                    INPUT VAL END
-                    */
-
-                    if(confirm_name == "N")
-                        break;
-                    else
+        
+            while (true) {
+                std::cout << "Enter Your [NEW NAME]: ";
+                std::cin >> new_name;
+        
+                while (true) {
+                    std::cout << "CONFIRM [Y] or [N]? ";
+                    std::cin >> confirm_name;
+        
+                    if (confirm_name == "Y") {
                         user = new_name;
-                        break;
-                    
+                        return;  // Exit the function directly, no break dance
+                    }
+                    else if (confirm_name == "N") {
+                        std::cout << "Let's try again.\n";
+                        break;  // Break inner loop to ask for name again
+                    }
+                    else {
+                        std::cerr << "Invalid input. Please enter Y or N.\n";
+                        // Clear bad input (if any)
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    }
                 }
+            }
         }
+        
 
         std::string getUser() {
             return user;
