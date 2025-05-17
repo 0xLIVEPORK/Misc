@@ -1,22 +1,4 @@
 
----
-
-## 🔧 Project: **Configurable Text-Based Habit Tracker**
-
-### 🧠 Skills it flexes:
-
-- File I/O (`fstream`)
-    
-- `std::vector`, `std::map`, maybe `std::unordered_map`
-    
-- Simple CLI parsing
-    
-- Classes and encapsulation
-    
-- RAII and destructors (if you want logging/saving at shutdown)
-    
-
----
 
 ### 📝 What it does:
 
