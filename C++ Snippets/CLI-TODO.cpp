@@ -1,22 +1,3 @@
-
-
-### 📝 What it does:
-
-- You define habits (e.g. “Drink Water”, “Read 10 pages”)
-    
-- Track daily completion
-    
-- Save/load to a file
-    
-- Show streaks or totals
-    
-- Optional: autosave on exit
-    
-
----
-
-### Example usage:*/
-
 #include <iostream>
 #include <limits>
 #include <cstdlib>
