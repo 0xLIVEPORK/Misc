@@ -65,17 +65,29 @@ class App{
                     std::cin >> new_name; 
 
                     std::cout << "\nCONFIRM [Y] or [N]? ";
+
+                    /*
+                    INPUT VALIDATION
+                    */
                     do
                     {
                         if(!(std::cin >> confirm_name))
                         {
-                            if(confirm_name !)
-                            std::cin.clear();
-                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                            continue;
+                            if(confirm_name != "Y" || confirm_name != "N")
+
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                                std::cerr << "Invalid";
+
+                                continue;
                         } break;
 
                     } while(true);
+
+                    /*
+                    INPUT VAL END
+                    */
 
                     if(confirm_name == "N")
                         break;
@@ -85,6 +97,12 @@ class App{
                     
                 }
         }
+
+        std::string getUser() {
+            return user;
+        }
+
+
 };
 
 
@@ -92,6 +110,8 @@ int main()
 {
     App Todo("Cock");
     Todo.set_USERNAME();
+
+    std::cout << Todo.getUser();
 
     return 0;
 }
