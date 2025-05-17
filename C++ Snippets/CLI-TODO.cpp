@@ -17,12 +17,25 @@ class App{
 
         void Menu_Loop() {
 
+            int choice;
+
             std::cout << "\t[TO DO]\t\n"
                          "#  CHOOSE THE NUMBER\n\n"
                          "[1] OPEN TO DO LIST\n"
                          "[2] EDIT LIST\n"
                          "[3] USER SETTINGS\n"
                          "[4] LOG-OUT";
+
+            while(true)
+                {
+                if(!(std::cin >> choice) || choice < 1 || choice > 4)
+                    {
+                        std::cerr << "ERROR: INVALID INPUT";
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        continue;
+                    }
+                }
         }
 
         void set_USERNAME() {
