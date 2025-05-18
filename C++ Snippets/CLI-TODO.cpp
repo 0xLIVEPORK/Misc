@@ -14,6 +14,16 @@ class App{
         App() = delete; 
         App(std::string name) : user(name) {}
 
+        void checkFile() {
+
+            std::ifstream readUSERFILE("user.txt");
+
+            if(!readUSERFILE)
+                {
+                    
+                }
+        }
+
 
         void Menu_Loop() {
 
@@ -41,8 +51,8 @@ class App{
             switch(choice)
             {
                 case 1:
+                checkFile();
 
-                
             }
         }
 
