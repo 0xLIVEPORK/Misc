@@ -35,7 +35,15 @@ class App{
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         continue;
                     }
-                }
+                break;
+                } 
+
+            switch(choice)
+            {
+                case 1:
+
+                
+            }
         }
 
         void set_USERNAME() {
