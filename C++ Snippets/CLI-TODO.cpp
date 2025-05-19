@@ -21,7 +21,7 @@ class App{
 
             if(!readUSERFILE)
                 {
-                    printf("Welcome [%s]", getUser());
+                    std::cout << getUser();
                     std::ofstream("user.txt");
                 } else if(readUSERFILE.is_open())
                     {
@@ -129,4 +129,4 @@ int main()
 
 
     return 0;
-}
+}s
