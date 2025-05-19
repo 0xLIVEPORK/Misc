@@ -20,7 +20,8 @@ class App{
 
             if(!readUSERFILE)
                 {
-                    
+                    printf("Welcome [%s]", getUser());
+                    std::ofstream("user.txt");
                 }
         }
 
@@ -52,6 +53,22 @@ class App{
             {
                 case 1:
                 checkFile();
+                break;
+
+                case 2:
+                std::cout << "Incomplete Feature";
+                break;
+
+                case 3:
+                set_USERNAME();
+                break;
+
+                case 4:
+                EOF;
+                break;
+
+                default:
+                std::cout << "You're out of bounds lil bro";
 
             }
         }
@@ -100,6 +117,7 @@ int main()
     App Todo("Cock");
 
     Todo.Menu_Loop();
+
 
     return 0;
 }
