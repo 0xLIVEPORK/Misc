@@ -17,12 +17,21 @@ class App{
         void checkFile() {
 
             std::ifstream readUSERFILE("user.txt");
+            std::string line;
 
             if(!readUSERFILE)
                 {
                     printf("Welcome [%s]", getUser());
                     std::ofstream("user.txt");
-                }
+                } else if(readUSERFILE.is_open())
+                    {
+                        while(std::getline(readUSERFILE, line)) {
+                            std::cout << line << std::endl;
+                        }
+                        readUSERFILE.close();
+                    } else{
+                        std::cerr << "Invalid";
+                    }
         }
 
 
