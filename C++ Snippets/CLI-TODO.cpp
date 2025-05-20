@@ -16,22 +16,14 @@ class App{
 
         void checkFile() {
 
-            std::ifstream readUSERFILE("user.txt");
+            std::ifstream chkFILE("user.txt");
             std::string line;
 
-            if(!readUSERFILE)
+            if(!chkFILE)
                 {
-                    std::cout << getUser();
-                    std::ofstream("user.txt");
-                } else if(readUSERFILE.is_open())
-                    {
-                        while(std::getline(readUSERFILE, line)) {
-                            std::cout << line << std::endl;
-                        }
-                        readUSERFILE.close();
-                    } else{
-                        std::cerr << "Invalid";
-                    }
+                    std::cerr << "File Does Not Exist";
+                    std::ofstream makeFILE("user.txt");
+                }
         }
 
 
