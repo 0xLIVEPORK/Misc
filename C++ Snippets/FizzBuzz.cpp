@@ -2,15 +2,10 @@
 #include <limits>
 #include <cstdlib>
 
-void Fizz(int number)
-    {
-        if(number / 3 >= 1)
-            printf("FizzBuzz\n");
-        else  
-            std::cout << number << std::endl;
-    }
+void FizzBuzz(int number) {
 
 
+}
 
 int main() {
     Fizz(3);
