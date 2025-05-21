@@ -4,17 +4,31 @@
 
 void FizzBuzz(int number) {
 
-    if(!(number / 3 >= 1 && number / 5 >= 1))
+    if(!(number / 3 >= 1 || number / 5 >= 1))
         std::cout << number;
-    else if(number / 3 >= 1)
-        puts("Fizz");
-    else if(number )
+    else if(number / 3 >= 1 && number % 3 == 0)
+        printf("Fizz");
+    else if(number / 5 >= 1 && number % 5 == 0)
+        printf("Buzz");
+    else if(number % 5 == 0)
+    else
+        printf("Odd?");
 
         
 
 }
 
 int main() {
-    FizzBuzz(3);
-    FizzBuzz(2);
+    int c;
+    while(true)
+        {
+            if(!(std::cin >> c))
+                {
+                    std::cerr << "INVALID! TRY AGAIN: ";
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    continue;
+                }
+                FizzBuzz(c);
+        }
 }
