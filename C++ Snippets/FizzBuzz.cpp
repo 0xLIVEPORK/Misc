@@ -4,16 +4,14 @@
 
 void FizzBuzz(int number) {
 
-    if(!(number / 3 >= 1 || number / 5 >= 1))
-        std::cout << number;
+    if(number % 5 == 0 && number % 3 == 0)
+        puts("FizzBuzz");
     else if(number / 3 >= 1 && number % 3 == 0)
-        printf("Fizz");
+        puts("Fizz");
     else if(number / 5 >= 1 && number % 5 == 0)
         puts("Buzz");
-    else if(number % 5 == 0 && number % 3 == 0)
-        puts("FizzBuzz");
     else
-        printf("Odd?");
+        printf("Hmmm this is odd.");
 
         
 
