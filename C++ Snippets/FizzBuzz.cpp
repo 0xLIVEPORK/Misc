@@ -11,7 +11,7 @@ void FizzBuzz(int number) {
     else if(number / 5 >= 1 && number % 5 == 0)
         puts("Buzz");
     else
-        printf("Hmmm this is odd.");
+        printf("%d",number);
 
         
 
