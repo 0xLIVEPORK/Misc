@@ -9,8 +9,9 @@ void FizzBuzz(int number) {
     else if(number / 3 >= 1 && number % 3 == 0)
         printf("Fizz");
     else if(number / 5 >= 1 && number % 5 == 0)
-        printf("Buzz");
-    else if(number % 5 == 0)
+        puts("Buzz");
+    else if(number % 5 == 0 && number % 3 == 0)
+        puts("FizzBuzz");
     else
         printf("Odd?");
 
