@@ -42,9 +42,9 @@ class App{
                 std::ofstream editFile("user.txt");
 
                 if(!editFile)
-                    std::cerr << "Error File Handling";
+                    {std::cerr << "Error File Handling";}
                 else
-                    editFile << "LOVE MEEEEE";
+                    {editFile << "LOVE MEEEEE";}
             };
         }
 
