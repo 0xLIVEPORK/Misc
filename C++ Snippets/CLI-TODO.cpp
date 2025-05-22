@@ -49,10 +49,9 @@ class App{
                         while(true)
                         {
                             std::cout << "Enter Task Name: ";
-                            if(std::cin >> addtask_name)
-                                {
-
-                                }
+                            std::cin >> addtask_name;
+                            
+                            std::cout << "Enter"
                         }
                     editFile << "LOVE MEEEEE";}
 
