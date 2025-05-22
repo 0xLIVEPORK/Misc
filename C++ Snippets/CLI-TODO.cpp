@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -44,6 +43,8 @@ class App{
             * If we do need so we can just copy paste it but I doubt it
             * User does not need to rewrite files with the Quit option does he?
             **/
+
+            //ADD TASK LAMBDA
             std::function<void()> ADDTASK = [](){
 
                 std::string addtask_name, addtask_deadline, addtask_description;
@@ -88,6 +89,12 @@ class App{
                     }
                 };
             
+            std::function<void()> EDITTASK = [](){
+
+                std::fstream editFile("user.txt");
+
+
+                };
                 
             }
 
