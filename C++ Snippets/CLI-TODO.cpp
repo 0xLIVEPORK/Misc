@@ -39,14 +39,26 @@ class App{
         void editList() {
 
             std::function<void()> writetoFile = [](){
+                std::string addtask_name, addtask_deadline, addtask_description;
                 std::ofstream editFile("user.txt");
 
                 if(!editFile)
                     {std::cerr << "Error File Handling";}
                 else
-                    {editFile << "LOVE MEEEEE";}
+                    {
+                        while(true)
+                        {
+                            std::cout << "Enter Task Name: ";
+                            if(std::cin >> addtask_name)
+                                {
+
+                                }
+                        }
+                    editFile << "LOVE MEEEEE";}
 
             };
+
+            
 
             writetoFile();
         }
