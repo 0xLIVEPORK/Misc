@@ -38,18 +38,26 @@ class App{
 
         void editList() {
 
-            std::function<void()> writetoFile = [](){
+            /** LAMBDAS
+            * Better set this now
+            * No need to reuse these functions anywhere else anyways
+            * If we do need so we can just copy paste it but I doubt it
+            * User does not need to rewrite files with the Quit option does he?
+            **/
+            std::function<void()> ADDTASK = [](){
 
                 std::string addtask_name, addtask_deadline, addtask_description;
                 std::fstream editFile("user.txt");
 
                 if(!editFile)
-                    {std::cerr << "Error File Handling";}
+                    {
+                        std::cerr << "Error File Handling";
+                    }
                 else
                     {
                         while(true)
                         {
-                            std::cin.ignore();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                             std::cout << "\nEnter Task Name: ";
                             std::getline(std::cin, addtask_name);
                             
@@ -79,8 +87,8 @@ class App{
 
                     }
                 };
-            //WHAT THE FUCK
-            writetoFile(); 
+            
+                
             }
 
 
