@@ -45,7 +45,10 @@ class App{
                     {std::cerr << "Error File Handling";}
                 else
                     {editFile << "LOVE MEEEEE";}
+
             };
+
+            writetoFile();
         }
 
 
@@ -58,13 +61,13 @@ class App{
                          "[1] OPEN TO DO LIST\n"
                          "[2] EDIT LIST\n"
                          "[3] USER SETTINGS\n"
-                         "[4] LOG-OUT";
+                         "[4] LOG-OUT \n\n: ";
 
             while(true)
                 {
                 if(!(std::cin >> choice) || choice < 1 || choice > 4)
                     {
-                        std::cerr << "ERROR: INVALID INPUT";
+                        std::cerr << "ERROR: INVALID INPUT: ";
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         continue;
@@ -79,7 +82,7 @@ class App{
                 break;
 
                 case 2:
-                std::cout << "Incomplete Feature";
+                editList();
                 break;
 
                 case 3:
