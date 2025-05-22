@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -39,7 +40,7 @@ class App{
 
             std::function<void()> writetoFile = [](){
                 std::string addtask_name, addtask_deadline, addtask_description;
-                std::ofstream editFile("user.txt");
+                std::ifstream editFile("user.txt");
 
                 if(!editFile)
                     {std::cerr << "Error File Handling";}
@@ -47,12 +48,23 @@ class App{
                     {
                         while(true)
                         {
-                            std::cout << "Enter Task Name: ";
+                            std::cout << "\nEnter Task Name: ";
                             std::cin >> addtask_name;
                             
-                            std::cout << "Enter"
-                        }
-                    editFile << "LOVE MEEEEE";}
+                            std::cout << "\nEnter Dead Line: ";
+                            std::cin >> addtask_deadline;
+
+                            std::cout << "\nEnter Description: ";
+                            std::cin >> addtask_description;
+
+                            std::cout << "\nEnter \"0\" if you want to save, anything else will discard your task";
+                            
+                            int choice;
+
+                            if(!(std::cin >> choice) || choice != 0)
+                                break;
+
+                            else if(choice == 0)
 
             };
 
@@ -63,52 +75,53 @@ class App{
 
 
         void Menu_Loop() {
-
-            int choice;
-
-            std::cout << "\t[TO DO]\t\n"
-                         "#  CHOOSE THE NUMBER\n\n"
-                         "[1] OPEN TO DO LIST\n"
-                         "[2] EDIT LIST\n"
-                         "[3] USER SETTINGS\n"
-                         "[4] LOG-OUT \n\n: ";
-
             while(true)
-                {
-                if(!(std::cin >> choice) || choice < 1 || choice > 4)
+            { 
+                int choice;
+
+                std::cout << "\t[TO DO]\t\n"
+                            "#  CHOOSE THE NUMBER\n\n"
+                            "[1] OPEN TO DO LIST\n"
+                            "[2] EDIT LIST\n"
+                            "[3] USER SETTINGS\n"
+                            "[4] LOG-OUT \n\n: ";
+
+                while(true)
                     {
-                        std::cerr << "ERROR: INVALID INPUT: ";
-                        std::cin.clear();
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        continue;
-                    }
-                break;
-                } 
+                    if(!(std::cin >> choice) || choice < 1 || choice > 4)
+                        {
+                            std::cerr << "ERROR: INVALID INPUT: ";
+                            std::cin.clear();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            continue;
+                        }
+                    break;
+                    } 
 
-            switch(choice)
-            {
-                case 1:
-                checkFile();
-                break;
+                switch(choice)
+                {
+                    case 1:
+                    checkFile();
+                    break;
 
-                case 2:
-                editList();
-                break;
+                    case 2:
+                    editList();
+                    break;
 
-                case 3:
-                set_USERNAME();
-                break;
+                    case 3:
+                    set_USERNAME();
+                    break;
 
-                case 4:
-                exit(0);
-                break;
+                    case 4:
+                    exit(0);
+                    break;
 
-                default:
-                std::cout << "You're out of bounds lil bro";
+                    default:
+                    std::cout << "You're out of bounds lil bro";
 
+                }
             }
         }
-
         void set_USERNAME() {
             std::string new_name;
             std::string confirm_name;
