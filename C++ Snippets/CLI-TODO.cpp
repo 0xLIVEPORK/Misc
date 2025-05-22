@@ -39,8 +39,9 @@ class App{
         void editList() {
 
             std::function<void()> writetoFile = [](){
+
                 std::string addtask_name, addtask_deadline, addtask_description;
-                std::ifstream editFile("user.txt");
+                std::fstream editFile("user.txt");
 
                 if(!editFile)
                     {std::cerr << "Error File Handling";}
@@ -48,30 +49,38 @@ class App{
                     {
                         while(true)
                         {
+                            std::cin.ignore();
                             std::cout << "\nEnter Task Name: ";
-                            std::cin >> addtask_name;
+                            std::getline(std::cin, addtask_name);
                             
                             std::cout << "\nEnter Dead Line: ";
-                            std::cin >> addtask_deadline;
+                            std::getline(std::cin, addtask_deadline);
 
                             std::cout << "\nEnter Description: ";
-                            std::cin >> addtask_description;
+                            std::getline(std::cin, addtask_description);
 
                             std::cout << "\nEnter \"0\" if you want to save, anything else will discard your task";
                             
                             int choice;
 
                             if(!(std::cin >> choice) || choice != 0)
-                                break;
+                                {
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                    continue;
+                                }
 
-                            else if(choice == 0)
+                            else
+                                {
+                                    editFile << addtask_name << " | " << addtask_deadline << " | " << addtask_description;
+                                    break;
+                                }
+                        }
 
-            };
-
-            
-
-            writetoFile();
-        }
+                    }
+                };
+            writetoFile(); 
+            }
 
 
         void Menu_Loop() {
