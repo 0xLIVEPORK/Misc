@@ -79,8 +79,10 @@ class App{
 
                     }
                 };
+            //WHAT THE FUCK
             writetoFile(); 
             }
+
 
 
         void Menu_Loop() {
@@ -131,6 +133,7 @@ class App{
                 }
             }
         }
+
         void set_USERNAME() {
             std::string new_name;
             std::string confirm_name;
