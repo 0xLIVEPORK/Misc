@@ -1,209 +1,43 @@
 
-#include <iostream>
-#include <limits>
-#include <cstdlib>
-#include <fstream>
-#include <functional>
 
-class App{
-    private:
-        std::string user;
+Operating System:
+    Pop!_OS 22.04 LTS, Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
+Firmware:
+    Insyde BIOS
+    (An upgrade to System76 Open Firmware will be available once development for the new Intel platform is complete.)
+Processor:
+    Intel Core Ultra 9 275HX, up to 5.4 GHz - 36MB cache - 36 TOPS - 24 total cores
+Display:
+    16” QHD (2560x1600) Matte Finish, 16:10, 240Hz
+Graphics:
+    NVIDIA GeForce RTX 5070 Ti 12GB GDDR7 - 1406 TOPS
+Memory:
+    Up to 96GB dual-channel DDR5 @ 5600 MHz
+Storage:
+    1x M.2 PCIe Gen 5 SSD, 2x M.2 PCIe Gen 4 SSD, Up to 12TB total
+Expansion:
+    2 x USB 3.2 Gen 2 (Type A), 2 x Thunderbolt 4 (Type C), MicroSD Card Reader
+Input:
+    Multitouch Touchpad, Multi-Color Backlit Chiclet US QWERTY Keyboard
+Networking:
+    2.5 GbE Ethernet, Wifi 7, Bluetooth 5.3
+Video Ports:
+    1 x HDMI (w/ HDCP), 2 x Thunderbolt™ 4
+Audio:
+    Internal speakers, 2-in-1 Audio Jack (Headphone / Microphone)
+Camera:
+    5.0M HD Camera
+Security:
+    Kensington® Lock
+Battery:
+    4 cell Polymer battery pack 80WH
+Charger:
+    230 Watts, AC-in 100~240V, 50~60Hz
+Dimensions:
+    14.01”W x 10.67”D x 0.78”H (355.85 x 271.02 x 19.81 mm)
+Weight:
+    4.96 lbs (2.25kg)
+    Base weight. Varies on configuration.
+Model:
+    serw14 - Technical Documentation
 
-    public:
-
-        App() = delete; 
-        App(std::string name) : user(name) {}
-
-        void checkFile() {
-
-            std::ifstream chkFILE("user.txt");
-            std::string line;
-
-            if(!chkFILE)
-                {
-                    std::cerr << "File Does Not Exist";
-                    std::ofstream makeFILE("user.txt");
-                    if(!makeFILE)
-                        {
-                            std::cerr << "FILE CREATION ERROR";
-                        }
-                } 
-
-            else
-                {
-                    std::getline(chkFILE, line);
-                    std::cout << line;
-                }
-        }
-
-        void editList() {
-
-            unsigned int choice;
-
-            /** LAMBDAS
-            * Better set this now
-            * No need to reuse these functions anywhere else anyways
-            * If we do need so we can just copy paste it but I doubt it
-            * User does not need to rewrite files with the Quit option does he?
-            **/
-
-            //ADD TASK LAMBDA
-            std::function<void()> ADDTASK = [](){
-
-                std::string addtask_name, addtask_deadline, addtask_description;
-                std::fstream editFile("user.txt");
-
-                if(!editFile)
-                    {
-                        std::cerr << "Error File Handling";
-                    }
-                else
-                    {
-                        while(true)
-                        {
-                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                            std::cout << "\nEnter Task Name: ";
-                            std::getline(std::cin, addtask_name);
-                            
-                            std::cout << "\nEnter Dead Line: ";
-                            std::getline(std::cin, addtask_deadline);
-
-                            std::cout << "\nEnter Description: ";
-                            std::getline(std::cin, addtask_description);
-
-                            std::cout << "\nEnter \"0\" if you want to save, anything else will discard your task";
-                            
-                            int choice;
-
-                            if(!(std::cin >> choice) || choice != 0)
-                                {
-                                    std::cin.clear();
-                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                    continue;
-                                }
-
-                            else
-                                {
-                                    editFile << addtask_name << " | " << addtask_deadline << " | " << addtask_description;
-                                }
-                        }
-
-                    }
-                };
-            
-            std::function<void()> EDITTASK = [](){
-
-                std::fstream editFile("user.txt");
-
-
-                };
-                
-
-            while(true)
-                {
-                    if(!(std::cin >> choice) | choice < 0 || choice || choice > 4)
-                        {
-                            
-                        }
-                }
-            }
-
-
-
-        void Menu_Loop() {
-            while(true)
-            { 
-                int choice;
-
-                std::cout << "\t[TO DO]\t\n"
-                            "#  CHOOSE THE NUMBER\n\n"
-                            "[1] OPEN TO DO LIST\n"
-                            "[2] EDIT LIST\n"
-                            "[3] USER SETTINGS\n"
-                            "[4] LOG-OUT \n\n: ";
-
-                while(true)
-                    {
-                    if(!(std::cin >> choice) || choice < 1 || choice > 4)
-                        {
-                            std::cerr << "ERROR: INVALID INPUT: ";
-                            std::cin.clear();
-                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                            continue;
-                        }
-                    break;
-                    } 
-
-                switch(choice)
-                {
-                    case 1:
-                    checkFile();
-                    break;
-
-                    case 2:
-                    editList();
-                    break;
-
-                    case 3:
-                    set_USERNAME();
-                    break;
-
-                    case 4:
-                    exit(0);
-                    break;
-
-                    default:
-                    std::cout << "You're out of bounds lil bro";
-
-                }
-            }
-        }
-
-        void set_USERNAME() {
-            std::string new_name;
-            std::string confirm_name;
-        
-            while (true) {
-                std::cout << "Enter Your [NEW NAME]: ";
-                std::cin >> new_name;
-        
-                while (true) {
-                    std::cout << "CONFIRM [Y] or [N]? ";
-                    std::cin >> confirm_name;
-        
-                    if (confirm_name == "Y") {
-                        user = new_name;
-                        return;  
-                    }
-                    else if (confirm_name == "N") {
-                        std::cout << "Let's try again.\n";
-                        break; 
-                    }
-                    else {
-                        std::cerr << "Invalid input. Please enter Y or N.\n";
-
-                        std::cin.clear();
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    }
-                }
-            }
-        }
-        
-
-        std::string getUser() {
-            return user;
-        }
-
-
-};
-
-
-int main()
-{
-    App Todo("Cock");
-
-    Todo.Menu_Loop();
-
-
-    return 0;
-}
