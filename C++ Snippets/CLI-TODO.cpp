@@ -93,9 +93,10 @@ class App{
             
             std::function<void()> EDITTASK = [](){
 
-                std::fstream editFile("user.txt", std::ios::out | std::ios::app);
+                std::fstream editFile("user.txt", std::ios::in | std::ios::out | std::ios::app);
 
 
+                
 
                 };
                 
