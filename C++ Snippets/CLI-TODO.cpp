@@ -94,10 +94,20 @@ class App{
             std::function<void()> EDITTASK = [](){
 
                 std::fstream editFile("user.txt", std::ios::in | std::ios::out | std::ios::app);
-
-
                 
+                if(!editFile.is_open())
+                    {
+                        std::cerr << "FILE ERROR";
+                        return;
+                    }
 
+                    std::string line;
+                    std::string allContent;
+
+                    while(std::getline(editFile, line))
+                        {
+                            size_t pos = line.find("old");
+                        }
                 };
                 
 
