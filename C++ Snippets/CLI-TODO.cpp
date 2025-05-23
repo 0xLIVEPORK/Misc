@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -36,6 +37,8 @@ class App{
         }
 
         void editList() {
+
+            unsigned int choice;
 
             /** LAMBDAS
             * Better set this now
@@ -82,7 +85,6 @@ class App{
                             else
                                 {
                                     editFile << addtask_name << " | " << addtask_deadline << " | " << addtask_description;
-                                    break;
                                 }
                         }
 
@@ -96,6 +98,14 @@ class App{
 
                 };
                 
+
+            while(true)
+                {
+                    if(!(std::cin >> choice) | choice < 0 || choice || choice > 4)
+                        {
+                            
+                        }
+                }
             }
 
 
