@@ -1,4 +1,4 @@
-fff
+
 #include <iostream>
 #include <limits>
 #include <cstdlib>
@@ -105,18 +105,30 @@ class App{
                     std::string allContent;
 
                     while(std::getline(editFile, line))
-                        {
-                            size_t pos = line.find("old");
-                        }
+                        std::cout << line;
                 };
                 
-
+            
+            choice = 0;
             while(true)
                 {
-                    if(!(std::cin >> choice) | choice < 0 || choice || choice > 4)
+                std::cout << "Pick what you want to edit: ";
+                    if(!(std::cin >> choice))
                         {
-                            
-                        }
+                            std::cerr << "\nINVALID";
+                            std::cin.clear();
+                            std::cin.ignore();
+                            continue;
+                        } 
+
+                    switch(choice)
+                    {
+                        case 0:
+
+                        
+                    }
+                    
+                    
                 }
             }
 
