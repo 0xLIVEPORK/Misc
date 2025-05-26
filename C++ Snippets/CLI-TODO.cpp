@@ -61,7 +61,10 @@ class App{
                     {
                         while(true)
                         {
-                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+
+                            std::cin.ignore();
+                            
                             std::cout << "\nEnter Task Name: ";
                             std::getline(std::cin, addtask_name);
                             
@@ -112,7 +115,8 @@ class App{
             choice = 0;
             while(true)
                 {
-                std::cout << "Pick what you want to edit: ";
+                std::cout << "Pick what you want to edit: "
+                             "\n[0] - EDIT TASK" ;
                     if(!(std::cin >> choice))
                         {
                             std::cerr << "\nINVALID";
@@ -124,7 +128,15 @@ class App{
                     switch(choice)
                     {
                         case 0:
+                        EDITTASK();
+                        break;
 
+                        case 1:
+                        ADDTASK();
+
+                        default:
+                        std::cout << "END";
+                        return;
                         
                     }
                     
