@@ -63,8 +63,9 @@ class App{
                         {
 
 
-                            std::cin.ignore();
-                            
+                            std::cin.clear();
+                            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
                             std::cout << "\nEnter Task Name: ";
                             std::getline(std::cin, addtask_name);
                             
@@ -76,9 +77,9 @@ class App{
 
                             std::cout << "\nEnter \"0\" if you want to save, anything else will discard your task";
                             
-                            int choice;
+                            unsigned int choice;
 
-                            if(!(std::cin >> choice) || choice != 0)
+                            if(!(std::cin >> choice) || choice > 0)
                                 {
                                     std::cin.clear();
                                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -87,7 +88,8 @@ class App{
 
                             else
                                 {
-                                    editFile << addtask_name << " | " << addtask_deadline << " | " << addtask_description;
+                                    break;
+                                    editFile << addtask_name << " | " << addtask_deadline << " | " << addtask_description << std::endl;
                                 }
                         }
 
@@ -111,6 +113,9 @@ class App{
                         std::cout << line;
                 };
                 
+            std::function<void()> NAME = [](){
+
+            };
             
             choice = 0;
             while(true)
