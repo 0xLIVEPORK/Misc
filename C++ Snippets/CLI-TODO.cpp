@@ -8,7 +8,7 @@
 class App{
     private:
         std::string user;
-s
+
     public:
 
         App() = delete; 
