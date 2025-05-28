@@ -40,7 +40,7 @@ class App{
 
             unsigned int choice;
 
-            /** LAMBDAS
+            /** LAMBDASd
             * Better set this now
             * No need to reuse these functions anywhere else anyways
             * If we do need so we can just copy paste it but I doubt it
@@ -120,8 +120,10 @@ class App{
             choice = 0;
             while(true)
                 {
-                std::cout << "Pick what you want to edit: "
-                             "\n[0] - EDIT TASK" ;
+                std::cout << "Pick what you want to edit:\n"
+                             "[0] - EDIT TASK\n"
+                             "[1] - ADD TASK\n"
+                             "[2] - EXIT";
                     if(!(std::cin >> choice))
                         {
                             std::cerr << "\nINVALID";
