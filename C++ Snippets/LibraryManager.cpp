@@ -13,7 +13,15 @@ struct book_DATA
     
 };
 
-void set_bookdata()
+void set_bookdata(book_DATA & book)
     {
+        std::string dataentry;
 
+        while(true)
+            {
+                if(!(std::getline(std::cin, book.Author))
+                    {
+                        
+                    }
+            }
     }
