@@ -5,6 +5,10 @@
 
 struct book_DATA
 {
-    std::string Title, ISB;
+    std::string Title, 
+                Author, 
+                ISB, 
+                Genre, 
+                Availability;
     
 };
