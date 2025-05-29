@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <limits>
 
-void bookdataentry();
+void set_bookdata();
 struct book_DATA
 {
     std::string Title, 
@@ -13,7 +13,7 @@ struct book_DATA
     
 };
 
-void bookdataentry()
+void set_bookdata()
     {
 
     }
