@@ -38,11 +38,14 @@ void set_bookdata(book_DATA & book) {
                         std::cerr << "Prompt Failed";
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        continue;
                     }
-
                 
+                else
+                    break;
+                    return answer;
             }
-    }
+    };
 
     //===========================================================================
 
@@ -53,8 +56,9 @@ void set_bookdata(book_DATA & book) {
             std::cerr << "File Making Failed";
         }
 
-    bookfile << book.Author << "|"
-             << book.Availability << "|";
+    bookfile << book.Title << "|"
+             << book.Author << "|"
+             << book.Genre << "|";
     //=======================================================
 
     //MAIN FUNCTION SECTION
