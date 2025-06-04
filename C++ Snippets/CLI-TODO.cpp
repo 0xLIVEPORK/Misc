@@ -33,7 +33,14 @@ void set_bookdata(book_DATA & book) {
         std::string answer;
         while(true)
             {
-                if(!(std::getline(std::cin, answer)) )
+                if(!(std::getline(std::cin, answer)) || answer.empty())
+                    {
+                        std::cerr << "Prompt Failed";
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    }
+
+                
             }
     }
 
