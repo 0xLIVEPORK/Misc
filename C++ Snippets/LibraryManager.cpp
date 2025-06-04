@@ -15,9 +15,6 @@ struct book_DATA
 
 void set_bookdata(book_DATA & book);
 
-void writetofile_bkdata(book_DATA & book);
-
-
 int main(){
     book_DATA test;
 
@@ -29,31 +26,37 @@ int main(){
 void set_bookdata(book_DATA & book) {
 
 
-    //DATA VALIDATION LAMBDA
-    auto enter_data = [](const std::string & prompt) -> std::string {
-    std::string line;
+    auto enter_data = [](const std::string & prompt) -> std::string{
+        std::string answer;
         while(true)
-        {
-        std::cout << prompt;
-            if(!(std::getline(std::cin, line)) || line.empty())
             {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;        
-            } 
-        break;
-        }
-    return line;
+                if(!(std::getline(std::cin, answer)) || answer.empty())
+                    {
+                        std::cerr << "Prompt Failed";
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        continue;
+                    }
+                
+                else
+                    break;
+                    return answer;
+            }
     };
-    //DATA VALIDATION LAMBDA
+
+    //=======================================================
 
     //WRITE TO BOOK FILE LAMBDA
-    std::ifstream bookfile("book_list.txt", std::ios::app);
+    std::fstream bookfile("book_list.txt", std::ios::app);
     if(!bookfile)
         {
-            std::cerr << "File Making Filled";
+            std::cerr << "File Making Failed";
         }
-    //WRITE TO BOOK FILE LAMBDA
+
+    bookfile << book.Title << "|"
+             << book.Author << "|"
+             << book.Genre << "|";
+    //=======================================================
 
     //MAIN FUNCTION SECTION
     //v.01
