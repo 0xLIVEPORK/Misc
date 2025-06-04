@@ -53,9 +53,12 @@ void set_bookdata(book_DATA & book) {
             std::cerr << "File Making Failed";
         }
 
-    bookfile << book.Title << "|"
-             << book.Author << "|"
-             << book.Genre << "|";
+    else
+        bookfile << book.Title        << "|"
+                 << book.Author       << "|"
+                 << book.Genre        << "|"
+                 << book.ISB          << "|"
+                 << book.Availability << "|";
     //=======================================================
 
     //MAIN FUNCTION SECTION
