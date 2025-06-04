@@ -30,6 +30,7 @@ void set_bookdata(book_DATA & book) {
         std::string answer;
         while(true)
             {
+            std::cout << prompt;
                 if(!(std::getline(std::cin, answer)) || answer.empty())
                     {
                         std::cerr << "Prompt Failed";
@@ -41,23 +42,6 @@ void set_bookdata(book_DATA & book) {
                 return answer;
             }
     };
-
-    //=======================================================
-
-    //WRITE TO BOOK FILE LAMBDA
-    std::fstream bookfile("book_list.txt", std::ios::app);
-    if(!bookfile)
-        {
-            std::cerr << "File Making Failed";
-        }
-
-    else
-        bookfile << book.Title        << "|"
-                 << book.Author       << "|"
-                 << book.Genre        << "|"
-                 << book.ISB          << "|"
-                 << book.Availability << "|";
-    //=======================================================
 
     //MAIN FUNCTION SECTION
     //v.01
@@ -76,6 +60,24 @@ void set_bookdata(book_DATA & book) {
 
     book.Availability = enter_data("Enter Availability: ");
     std::cout << "Availability Set to: " << book.Availability << "\n\n";
+
+    //=======================================================
+
+    //WRITE TO BOOK FILE 
+    std::fstream bookfile("book_list.txt", std::ios::app);
+    if(!bookfile)
+        {
+            std::cerr << "File Making Failed";
+        }
+
+    else
+        bookfile << book.Title        << "|"
+                 << book.Author       << "|"
+                 << book.Genre        << "|"
+                 << book.ISB          << "|"
+                 << book.Availability << "|";
+                 
+    //=======================================================
 
 
 }
