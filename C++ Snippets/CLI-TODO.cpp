@@ -29,22 +29,14 @@ int main(){
 void set_bookdata(book_DATA & book) {
 
 
-    //DATA VALIDATION LAMBDA
-    auto enter_data = [](const std::string & prompt) -> std::string {
-    std::string line;
+    auto enter_data = [](const std::string & prompt) -> std::string{
+        std::string answer;
         while(true)
-        {
-        std::cout << prompt;
-            if(!(std::getline(std::cin, line)) || line.empty())
             {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;        
-            } 
-        break;
-        }
-    return line;
-    };
+                if(!(std::getline(std::cin, answer)) )
+            }
+    }
+
     //===========================================================================
 
     //WRITE TO BOOK FILE LAMBDA
