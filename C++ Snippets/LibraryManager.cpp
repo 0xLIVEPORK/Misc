@@ -43,8 +43,13 @@ void set_bookdata(book_DATA & book) {
             }
     };
 
+    auto enter_genre = []() -> std::string{
+
+    };
+
+
     //MAIN FUNCTION SECTION
-    //v.01
+    //v.03
     
     book.Title = enter_data("Enter Book Title: ");
     std::cout << "Book Title Set to: " << book.Title << "\n\n";
@@ -55,7 +60,7 @@ void set_bookdata(book_DATA & book) {
     book.Genre = enter_data("Enter Genre: ");
     std::cout << "Genre Set to " << book.Genre << "\n\n";
 
-    book.ISB = enter_data("Enter ISB: ");
+    book.ISB = enter_data("Enter ISBN: ");
     std::cout << "ISB Set to " << book.ISB << "\n\n";
 
     book.Availability = enter_data("Enter Availability: ");
@@ -75,7 +80,7 @@ void set_bookdata(book_DATA & book) {
                  << book.Author       << "|"
                  << book.Genre        << "|"
                  << book.ISB          << "|"
-                 << book.Availability << "|";
+                 << book.Availability << "|\n";
                  
     //=======================================================
 
