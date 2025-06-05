@@ -25,7 +25,8 @@ int main(){
 
 void set_bookdata(book_DATA & book) {
 
-
+    //=======================================================
+    //Enter data for title, author, isbn, availability.
     auto enter_data = [](const std::string & prompt) -> std::string{
         std::string answer;
         while(true)
@@ -43,8 +44,16 @@ void set_bookdata(book_DATA & book) {
             }
     };
 
-    auto enter_genre = []() -> std::string{
+    auto enter_genre = [](const std::string & prompt) -> std::string{
+        std::string genre;
+        while(true)
+            {
+                std::cout << prompt;
+                if(!(std::getline(std::cin, genre)) || genre.empty())
+                    {
 
+                    }
+            }
     };
 
 
@@ -57,7 +66,7 @@ void set_bookdata(book_DATA & book) {
     book.Author = enter_data("Enter Author: ");
     std::cout << "Author Set to: " << book.Author << "\n\n";
 
-    book.Genre = enter_data("Enter Genre: ");
+    book.Genre = enter_genre("Enter Genre: ");
     std::cout << "Genre Set to " << book.Genre << "\n\n";
 
     book.ISB = enter_data("Enter ISBN: ");
