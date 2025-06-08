@@ -1,1 +1,7 @@
-
+print("You Know You know where you are with")
+print("FRom collapsing and falling")
+print("Bouncing back")
+print("ONEEEE DAYYYYYYYYYYY")
+print('I AM A GONNA GROW WINGS')
+print("A CHEMICAL REACTION")
+print('LET DOWN AND HANGING AROUND')
