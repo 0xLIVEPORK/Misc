@@ -1,4 +1,4 @@
 from sys import argv
-from os.path import exists
+from os.path import exist
 
 file_isopen 
